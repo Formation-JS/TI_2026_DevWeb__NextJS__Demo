@@ -7,3 +7,5 @@ export type Artist = {
   origin: string,
   categories: string[];
 };
+
+export type ArtistData = Omit<Artist, 'id'>;

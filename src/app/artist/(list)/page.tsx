@@ -1,5 +1,6 @@
-import ArtistService from '@/services/artist.service';
+import ArtistService from '@/features/artist/services/artist.service';
 import { delay } from '@/utils/delay.utils';
+import Link from 'next/link';
 
 export default async function ArtistListPage() {
 
@@ -15,6 +16,7 @@ export default async function ArtistListPage() {
   return (
     <>
       <h1 className='text-3xl'>Liste des artistes</h1>
+      <Link href='/artist/create' className='text-yellow-700 mb-2'>Ajouter un artiste</Link>
       {artists.map(artist => (
         <article key={artist.id} className='flex flex-col not-last:mb-2'>
           <p>{artist.firstName} {artist.lastName}</p>
